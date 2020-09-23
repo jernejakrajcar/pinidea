@@ -1,0 +1,15 @@
+.infinite
+{
+  width:100%;
+  height:1000px;
+}
+
+.infinite div
+{
+  width:100%;
+  height:100%;
+}
+
+body{
+  overflow-y:scroll; //always show scrollbar
+}

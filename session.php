@@ -2,9 +2,9 @@
 session_start();
 
 if(!isset($_SESSION['user_id'])
-        && $_SERVER['REQUEST_URI']!='/etrznica/login.php'
-        && $_SERVER['REQUEST_URI']!='/etrznica/registration.php'
-        && $_SERVER['REQUEST_URI']!='/etrznica/login_check.php') {
+        && $_SERVER['REQUEST_URI']!='/pinterest-klon/login.php'
+        && $_SERVER['REQUEST_URI']!='/pinterest-klon/registration.php'
+        && $_SERVER['REQUEST_URI']!='/pinterest-klon/login_check.php') {
     header("Location: login.php");
     die();
 }
