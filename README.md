@@ -1,2 +1,2 @@
-# pinterest-klon
- clon page of Pinterest
+# pinidea
+ PHP project - similar to Pinterest
