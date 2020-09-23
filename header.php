@@ -53,7 +53,7 @@ else{
             <?php
                   if (isset($_SESSION['user_id'])) {
             ?>
-            <a class="nav-link js-scroll-trigger" href="account.php" style="font-size:2.25rem;margin:0px;padding:0px;">
+            <a class="nav-link js-scroll-trigger" href="user_account.php" style="font-size:2.25rem;margin:0px;padding:0px;">
               <div class="avatar" style="height:80px;width:auto;border-radius:50%;">
                 <img src="<?php echo $avatar['avatar'];?>" style="height:80px;width:80px;border:1px solid darkgrey;border-radius:50%;">
               </div>
