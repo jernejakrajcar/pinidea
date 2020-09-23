@@ -28,10 +28,9 @@ $(".close, .popup-overlay").on("click", function() {
     var elem = document.querySelector('.grid');
     var msnry = new Masonry( elem, {
     // options
-    columnWidth: 100,
     itemSelector: '.grid-item',
-    gutter:10,
-    fitWidth: true,
+    columnWidth: 95,
+    percentPosition: true,
     });
 
 </script>
