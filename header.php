@@ -27,7 +27,7 @@ else{
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/stylev2.css" rel="stylesheet" type="text/css">
+    <link href="css/stylev3.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -42,8 +42,8 @@ else{
     </div>
 
     <div class="col-lg-9" style="padding:0;">
-      <form class="form-inline">
-        <input class="form-control col-lg-10 mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color:#dedede;border-radius:25px;">
+      <form class="form-inline" method="get" action="search_index.php">
+        <input class="form-control col-lg-10 mr-sm-2" type="search" name="searched" placeholder="Search" aria-label="Search" style="background-color:#dedede;border-radius:25px;">
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
@@ -60,10 +60,9 @@ else{
             </a>
             <a class="nav-link js-scroll-trigger" href="logout.php"  style="font-size:1.5rem;padding:1.5rem;"><i class="fa fa-power-off"></i></a>
             <?php
-                  if (isAdmin()) {
+                  if ($_SESSION['nickname'] == 'OrewaAdmin') {
               ?>
-              <a class="nav-item nav-link" href="#">admin</a>
-              <a class="nav-link js-scroll-trigger" href="logout.php"><i class="fa fa-power-off"></i></a>
+              <a class="nav-item nav-link" href="#">Admin</a>
             <?php
                   }
             ?>

@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
 
       $query = "INSERT INTO pins(title,picture,description,user_id) VALUES(?,?,?,?)";
       $stmt = $pdo->prepare($query);
-      $stmt->execute([$title,$target_file,$description,$user]);
+      $stmt->execute([$title,$target_file,$desc,$user]);
 
     if (move_uploaded_file($tmpName, $target_file)) {
         echo "The file ". basename( $name). " has been uploaded.";

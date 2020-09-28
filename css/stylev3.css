@@ -195,21 +195,28 @@ h5{
 }
 
 .middle{
+  border:1px solid #d9d9d9;
+  border-radius:30px;
   position:relative;
   display:flex;
   margin:0 auto;
+  height:auto;
+  max-width:60%;
 }
 
 .pin-info-image{
 position:relative;
+height:auto;
 width:50%;
 }
 
 .pin-info-image img{
-  height:100%;
-  width:auto;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 .info{
 position:relative;
+width:50%;
+padding:2%;
 }

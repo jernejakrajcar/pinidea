@@ -1,23 +1,26 @@
 <?php
-// echo '<pre>'; // formats output and adds linefeeds
-//   print_r($_SERVER);
-// echo '</pre>';
-// die;
-
 include_once './header.php';
 include_once './database.php';
 
-$stmt = $pdo->query("SELECT id, picture FROM pins ORDER BY RAND()");
+$words = $_GET['searched'];
+
+
+$query = "SELECT id,picture FROM pins WHERE title LIKE :words ORDER BY RAND()";
+$words ="%$words%";
+$stmt = $pdo->prepare($query);
+$stmt ->bindValue(':words',$words);
+$stmt->execute();
+
 ?>
 
 <div class="grid">
   <?php  while ($pin = $stmt->fetch()) {?>
   <div class="grid-item">
     <div class="pin-image">
-      <a href="pin_info.php?id=<?php echo $pin['id']; ?>">
-          <img src="<?php  echo $pin['picture']; ?>" class="image-pin-literal" alt="...">
+      <a href="pin_info.php?id=<?php echo $pin['id']; ?>"> <!--v url se zapiše id slike, na katero kliknemo -->
+        <img src="<?php  echo $pin['picture']; ?>" class="image-pin-literal" alt="...">
       </a>
-      </div>
+    </div>
   </div>
   <?php } ?>
 
