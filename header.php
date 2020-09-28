@@ -62,7 +62,7 @@ else{
             <?php
                   if ($_SESSION['nickname'] == 'OrewaAdmin') {
               ?>
-              <a class="nav-item nav-link" href="#">Admin</a>
+              <a class="nav-item nav-link" href="admin.php" style="padding-top:1.5rem;">Admin</a>
             <?php
                   }
             ?>
