@@ -66,9 +66,28 @@ if ($uploadOk == 0) {
         $stmt = $pdo->prepare($query);
         $stmt->execute([$nickname,$email,$phone,$country_id,$lang_id,$target_file,$pass]);
 
-        header("Location: index.php");
-        // $_SESSION['user_id'] = $user['id'];
-        // $_SESSION['nickname'] = $user['nickname'];
+        $query2 = "SELECT * FROM users WHERE email=?";
+        $stmt2 = $pdo->prepare($query2);
+        $stmt2->execute([$email]);
+
+        $user = $stmt2->fetch();
+
+        if(isset($user['id']))
+        {
+          session_start();
+          $_SESSION['user_id'] = $user['id'];
+          $_SESSION['nickname'] = $user['nickname'];
+          $_SESSION['email'] = $user['email'];
+
+          echo $_SESSION['user_id'];
+          echo $_SESSION['nickname'];
+          echo $_SESSION['email'];
+
+          header("Location: index.php");
+        }
+
+
+
         // die();
     }
     else {
