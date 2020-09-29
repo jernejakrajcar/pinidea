@@ -9,21 +9,23 @@ if(!isset($_SESSION['user_id'])
     die();
 }
 
-function isAdmin() {
-    $result = false;
-    if (isset($_SESSION['admin']) && ($_SESSION['admin']==1)) {
-        $result = true;
-    }
-    return $result;
-}
 
-function adminOnly() {
-    //če ni admin, ga preusmeri na index
-    if (!isAdmin()) {
-        header("Location: index.php");
-        die();
-    }
-}
+
+// function isAdmin() {
+//     $result = false;
+//     if (isset($_SESSION['admin']) && ($_SESSION['admin']==1)) {
+//         $result = true;
+//     }
+//     return $result;
+// }
+//
+// function adminOnly() {
+//     //če ni admin, ga preusmeri na index
+//     if (!isAdmin()) {
+//         header("Location: index.php");
+//         die();
+//     }
+// }
 
 
 

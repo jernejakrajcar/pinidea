@@ -66,7 +66,10 @@ if ($uploadOk == 0) {
         $stmt = $pdo->prepare($query);
         $stmt->execute([$nickname,$email,$phone,$country_id,$lang_id,$target_file,$pass]);
 
-        header("Location: login.php");
+        header("Location: index.php");
+        // $_SESSION['user_id'] = $user['id'];
+        // $_SESSION['nickname'] = $user['nickname'];
+        // die();
     }
     else {
         header("Location: registration.php");
