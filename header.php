@@ -60,13 +60,6 @@ else{
             </a>
             <a class="nav-link js-scroll-trigger" href="logout.php"  style="font-size:1.5rem;padding:1.5rem;"><i class="fa fa-power-off"></i></a>
             <?php
-                  if ($_SESSION['nickname'] == 'OrewaAdmin') {
-              ?>
-              <a class="nav-item nav-link" href="admin.php" style="padding-top:1.5rem;">Admin</a>
-            <?php
-                  }
-            ?>
-            <?php
                   }
                   else {
             ?>
