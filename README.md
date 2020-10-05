@@ -21,9 +21,7 @@ V samem index.php (torej na glavni strani) sem začela z izdelovanjem Grid tabel
 V database.php sem vpisala podatke za mojo bazo preko localhosta. Ter tudi dodala konfiguracijo za PDO.
 
 Kar izgleda nekako takole:
-<code>
- <?php
-
+```
 $host = 'localhost';
 $db   = 'pinterest';
 $user = 'root';
@@ -42,5 +40,4 @@ try {
 } catch (\PDOException $e) {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
-?>
-</code>
+```
