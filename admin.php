@@ -2,15 +2,6 @@
 include_once './header.php';
 include_once './database.php';
 
-if ($_SESSION['nickname'] != 'OrewaAdmin') {
-  header("Location: index.php");
-}
-
-else {
-  echo '<h5 style="color:red;padding:10px;">Welcome Admin!</h5>';
-}
-?>
-
 <div class="container-fluid">
   <div class="my-container">
     <hr>
