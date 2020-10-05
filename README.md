@@ -3,6 +3,9 @@
  
  Pinidiea je spletna aplikacija, kjer si lahko uporabnik ogleduje slike, tako imenovane pine, ki prikazujejo različne teme. Te pine si lahko uporabnik shrani v Boarde, ki lahko vsebujejo popolnoma različne pine. Kakor uporabniku najbolj paše. Pine, ki jih uporabnik sam ustvari jih lahko tudi sam doda na to aplikacijo.
  
+
+<h3>1.Postavitev baze</h3>
+ 
 <code>
  <?php echo $url; ?>
- </code>
+</code>
