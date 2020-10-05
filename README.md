@@ -43,6 +43,10 @@ try {
 }
 ```
 ### 4. Prijava in registracija
-Največ težav sem imela pri prijavi oz. bolj natančno pri prijavi preko drugih socialnih omrežij, kot sta Google in Twitter (kar sem uporabila jaz). Težave sem mela z callback Url-jem pri Twitterju in tudi s sprejemanjem podatkov, saj le te dobi samo enkrat preko klica API-ja. 
+Največ težav sem imela pri prijavi oz. bolj natančno pri prijavi preko drugih socialnih omrežij, kot sta Google in Twitter. Težave sem mela z callback Url-jem pri Twitterju in tudi s sprejemanjem podatkov, saj le te dobi samo enkrat preko klica API-ja. 
 
 Pri prijavi s Twitterjem sem si veliko pomagala z video tutorialom: https://www.youtube.com/watch?v=ga4TTze4Nqg
+
+### 5. Ustvarjanje pinov in boardov
+Pomemben del spletne strani pinidea so seveda pini. Ti si narejeni kot slika, ki ima dodane podatke o njej. 
+> Na primer: ![Quote_slika](https://www.google.si/search?hl=sl&tbm=isch&source=hp&biw=1920&bih=937&ei=Npl7X7ShLJGTlwSH84-ICw&q=quote&oq=quote&gs_lcp=CgNpbWcQAzICCAAyBQgAELEDMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCABQ4BxYySNgwShoAHAAeACAAUqIAegCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nsAEA&sclient=img&ved=0ahUKEwi0lO20u57sAhWRyYUKHYf5A7EQ4dUDCAc&uact=5#imgrc=hzsZqJPT5RTpVM)
