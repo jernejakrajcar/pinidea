@@ -7,6 +7,7 @@
 ### 1. Postavitev baze
 Najprej sem ustvarila podatkovno bazo, kjer sem ustvaila tabele users, pins, boards, categories, countries in languages. To bazo sem nato vstavila v phpmyadmin na localhostu in nadaljevala s pisanjem kode v XAMPP. 
 
+
 ### 2. Header, Footer in Index
 Naslednji korak je bil postavitev same spletne strani. Začela sem s headerjem, kjer sem tudi že navedla knjižnice, ki jih bom uporabljala vnaprej ter v footerju tudi povezave do skript za jquery in drugih knjižnic.
 
@@ -17,7 +18,7 @@ V samem index.php (torej na glavni strani) sem začela z izdelovanjem Grid tabel
  * MIT License
  * by David DeSandro
  
-### 3. Povezava na bazo in session_start()
+### 3. Povezava na bazo
 V database.php sem vpisala podatke za mojo bazo preko localhosta. Ter tudi dodala konfiguracijo za PDO.
 
 Kar izgleda nekako takole:
@@ -41,4 +42,7 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 ```
+### 4. Prijava in registracija
+Največ težav sem imela pri prijavi oz. bolj natančno pri prijavi preko drugih socialnih omrežij, kot sta Google in Twitter (kar sem uporabila jaz). Težave sem mela z callback Url-jem pri Twitterju in tudi s sprejemanjem podatkov, saj le te dobi samo enkrat preko klica API-ja. 
 
+Pri prijavi s Twitterjem sem si veliko pomagala z video tutorialom: https://www.youtube.com/watch?v=ga4TTze4Nqg
