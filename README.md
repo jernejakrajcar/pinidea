@@ -45,8 +45,58 @@ try {
 ### 4. Prijava in registracija
 Največ težav sem imela pri prijavi oz. bolj natančno pri prijavi preko drugih socialnih omrežij, kot sta Google in Twitter. Težave sem mela z callback Url-jem pri Twitterju in tudi s sprejemanjem podatkov, saj le te dobi samo enkrat preko klica API-ja. 
 
-Pri prijavi s Twitterjem sem si veliko pomagala z video tutorialom: https://www.youtube.com/watch?v=ga4TTze4Nqg
+
 
 ### 5. Ustvarjanje pinov in boardov
 Pomemben del spletne strani pinidea so seveda pini. Ti si narejeni kot slika, ki ima dodane podatke o njej. 
-> Na primer: ![Quote_slika](https://www.google.si/search?hl=sl&tbm=isch&source=hp&biw=1920&bih=937&ei=Npl7X7ShLJGTlwSH84-ICw&q=quote&oq=quote&gs_lcp=CgNpbWcQAzICCAAyBQgAELEDMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCABQ4BxYySNgwShoAHAAeACAAUqIAegCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nsAEA&sclient=img&ved=0ahUKEwi0lO20u57sAhWRyYUKHYf5A7EQ4dUDCAc&uact=5#imgrc=hzsZqJPT5RTpVM)
+> Na primer: Nekakšna slika s quotom bi imela naslov in opis tega kar prikazuje ali pripoveduje slika.
+
+Te pine lahko uporabnik ustvari in potem se prikažejo na glavni strani. Te lahko uporabnik doda v svoje boarde. Board si prav tako uporabnik lahko ustvari. Pri boardu nastavi naslov in ali je ta board privaten ali javen. 
+
+Poleg naslova in opisa pri posameznih pinih tudi piše, kdo je ta pin objavil. To deluje takole:
+``` 
+$query = "SELECT p.title, p.picture, p.description, u.nickname, u.avatar FROM pins p INNER JOIN users u ON u.id=p.user_id WHERE p.id=?";
+
+$stmt = $pdo->prepare($query);
+$stmt->execute([$pin]);
+
+$pin_info = $stmt->fetch();
+```
+S tem SQL stavkom dobimo infomacije o pinu in kateri uporabnik je ta pin ustvaril.
+Nato nam prikaže pin s pomočjo te kode:
+```
+<div class="pin-info-image">
+            <img src="<?php echo $pin_info['picture']; ?>" style="height:auto;width:100%;">
+</div>
+```
+In podatke o pinu s pomočjo te kode:
+```
+   <h3><?php echo $pin_info['title']; ?></h3>
+   <h5 style="color:gray;"><?php echo $pin_info['description']; ?></h5>
+   <hr>
+   <div class="avatar" >
+     <img src="<?php echo $pin_info['avatar']; ?>" style="height:80px;width:80px;border-radius:50%;">
+   </div>
+   <p><?php echo $pin_info['nickname']; ?></p>
+   <hr>
+```
+
+### 6. Iskanje preko Search polja
+Iskanje preko Search sem dodala, zato da če bi bilo kdaj pinov veliko, jih tako lažje poiščemo glede na to kaj želimo. To sem naredila na zelo enostaven način. S pomočjo SQL stavka, kjer sem primerjala z LIKE v naslovih pinov. Zato je dobro, da se pri pinih napiše dober in natančen naslov.
+
+Po vpisu neke besede ali besedne zveze v Search polje se na search_index.php prenese to v spremenljivko $words:
+```
+$words = $_GET['searched'];
+```
+
+Nato pa se to uporabi v SQL stavku:
+```
+$query = "SELECT id,picture FROM pins WHERE title LIKE :words ORDER BY RAND()";
+$words ="%$words%";
+$stmt = $pdo->prepare($query);
+$stmt ->bindValue(':words',$words);
+$stmt->execute();
+```
+
+## 7. Credits
+Pri prijavi s Twitterjem sem si veliko pomagala z video tutorialom: https://www.youtube.com/watch?v=ga4TTze4Nqg
