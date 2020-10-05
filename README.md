@@ -1,13 +1,13 @@
 # pinidea
- ##PHP projekt - namenjen izdelavi podobne spletne strani kot je Pinterest
+ ## PHP projekt - namenjen izdelavi podobne spletne strani kot je Pinterest
  
  Pinidiea je spletna aplikacija, kjer si lahko uporabnik ogleduje slike, tako imenovane pine, ki prikazujejo različne teme. Te pine si lahko uporabnik shrani v Boarde, ki lahko vsebujejo popolnoma različne pine. Kakor uporabniku najbolj paše. Pine, ki jih uporabnik sam ustvari jih lahko tudi sam doda na to aplikacijo.
  
 
-###1. Postavitev baze###
+### 1. Postavitev baze
 Najprej sem ustvarila podatkovno bazo, kjer sem ustvaila tabele users, pins, boards, categories, countries in languages. To bazo sem nato vstavila v phpmyadmin na localhostu in nadaljevala s pisanjem kode v XAMPP. 
 
-###2. Header, Footer in Index###
+### 2. Header, Footer in Index
 Naslednji korak je bil postavitev same spletne strani. Začela sem s headerjem, kjer sem tudi že navedla knjižnice, ki jih bom uporabljala vnaprej ter v footerju tudi povezave do skript za jquery in drugih knjižnic.
 
 V samem index.php (torej na glavni strani) sem začela z izdelovanjem Grid tabele, zato ker sem želela, da se slike prikažejo na način Masonry položaja. Pri tem sem uporabila knjižnico s podatki:
@@ -17,7 +17,7 @@ V samem index.php (torej na glavni strani) sem začela z izdelovanjem Grid tabel
  * MIT License
  * by David DeSandro
  
-###3. Povezava na bazo in session_start()
+### 3. Povezava na bazo in session_start()
 V database.php sem vpisala podatke za mojo bazo preko localhosta. Ter tudi dodala konfiguracijo za PDO.
 
 Kar izgleda nekako takole:
