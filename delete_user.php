@@ -2,13 +2,6 @@
 include_once './header.php';
 include_once './database.php';
 
-if ($_SESSION['nickname'] != 'OrewaAdmin') {
-  header("Location: index.php");
-}
-
-else {
-
-}
 
 $user = $_GET['id'];
 
